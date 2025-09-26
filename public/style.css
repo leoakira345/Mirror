@@ -1,0 +1,1191 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Changed to a soft off-white */
+    color: #333; /* Changed text color for contrast on white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent scrollbars on initial load */
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Auth Section */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.auth-box {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.app-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333; /* Changed text color */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Adjusted shadow for light background */
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: #555; /* Changed text color */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+    background: rgba(0, 0, 0, 0.15); /* Adjusted for white background */
+    font-weight: bold;
+}
+
+.tab-button:hover:not(.active) {
+    background: rgba(0, 0, 0, 0.08); /* Adjusted for white background */
+}
+
+.auth-form input {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Adjusted for white background */
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    color: #333; /* Changed text color */
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjusted for white background */
+}
+
+.auth-form input:focus {
+    border-color: #555; /* Adjusted for white background */
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+}
+
+/* Social Auth Buttons */
+.social-auth-divider {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.7); /* Adjusted for white background */
+    font-size: 0.9em;
+}
+
+.social-auth-divider::before,
+.social-auth-divider::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.3); /* Adjusted for white background */
+}
+
+.social-auth-divider span {
+    padding: 0 15px;
+}
+
+.social-auth-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Space between social buttons */
+}
+
+.social-auth-button i {
+    font-size: 1.2em;
+}
+
+.social-auth-button.google {
+    background: #DB4437; /* Google Red */
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(219, 68, 55, 0.4);
+}
+
+.social-auth-button.google:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(219, 68, 55, 0.6);
+}
+
+.social-auth-button.facebook {
+    background: #4267B2; /* Facebook Blue */
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(66, 103, 178, 0.4);
+}
+
+.social-auth-button.facebook:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 103, 178, 0.6);
+}
+
+
+/* Main App Layout */
+.main-app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    z-index: 1000;
+}
+
+.navbar .app-title {
+    margin: 0;
+    font-size: 1.8em;
+    color: #333; /* Changed text color */
+}
+
+.nav-center {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: #555; /* Changed text color */
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.08); /* Adjusted for white background */
+    transform: translateY(-1px);
+}
+
+.nav-button.active {
+    background: rgba(0, 0, 0, 0.15); /* Adjusted for white background */
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #555; /* Adjusted border color */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user-profile-icon:hover {
+    transform: scale(1.05);
+}
+
+.user-profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logout-button {
+    background: linear-gradient(45deg, #ff6b6b, #ee4d4d);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
+.logout-button:hover {
+    background: linear-gradient(45deg, #ee4d4d, #ff6b6b);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.6);
+}
+
+.app-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 80px; /* Space for chat bot */
+}
+
+/* Custom Scrollbar for app-content */
+.app-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.app-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    border-radius: 10px;
+}
+
+.app-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Adjusted for white background */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.app-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Adjusted for white background */
+}
+
+/* Home Page Posts */
+.post {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    max-width: 95%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid #555; /* Adjusted border color */
+}
+
+.post-username {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333; /* Changed text color */
+}
+
+.post-content {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555; /* Changed text color */
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.post-action-button {
+    background: rgba(0, 0, 0, 0.08); /* Adjusted for white background */
+    border: none;
+    color: #555; /* Changed text color */
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-action-button:hover {
+    background: rgba(0, 0, 0, 0.15); /* Adjusted for white background */
+}
+
+/* Trending Videos Section */
+.trending-videos-section {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+    text-align: center;
+}
+
+.trending-videos-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333; /* Changed text color */
+}
+
+.video-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-height: 70vh; /* Limit height for scrolling */
+    overflow-y: auto;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Custom Scrollbar for video-list-container */
+.video-list-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.video-list-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    border-radius: 10px;
+}
+
+.video-list-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Adjusted for white background */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.video-list-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Adjusted for white background */
+}
+
+.video-item {
+    background: rgba(0, 0, 0, 0.03); /* Adjusted for white background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    transition: transform 0.2s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 180px; /* Fixed height for video embeds */
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.video-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.video-info h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333; /* Changed text color */
+    margin-bottom: 5px;
+}
+
+.video-info p {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.7); /* Changed text color */
+    margin-bottom: 0;
+}
+
+/* User Profile Section */
+.user-profile-section {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-profile-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333; /* Changed text color */
+}
+
+.profile-picture-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #555; /* Adjusted border color */
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+}
+
+.profile-picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture-container label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Kept dark for contrast */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-picture-container label:hover {
+    background: rgba(0, 0, 0, 0.8); /* Kept dark for contrast */
+}
+
+.profile-picture-container label i {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.profile-info {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.profile-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+}
+
+.profile-info p strong {
+    display: inline-block;
+    width: 120px;
+    color: rgba(0, 0, 0, 0.8); /* Changed text color */
+}
+
+.profile-info input {
+    width: calc(100% - 140px); /* Adjust for label width */
+    padding: 8px 10px;
+    margin-left: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Adjusted for white background */
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    color: #333; /* Changed text color */
+    font-size: 1em;
+    outline: none;
+}
+
+.profile-info input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjusted for white background */
+}
+
+.profile-info input:focus {
+    border-color: #555; /* Adjusted for white background */
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.profile-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-profile-btn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+}
+
+.edit-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+}
+
+.save-profile-btn {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.save-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.cancel-profile-btn {
+    background: linear-gradient(45deg, #6c757d, #5a6268);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.cancel-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6);
+}
+
+/* Add Friends Section */
+.add-friends-section {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+    text-align: center;
+}
+
+.add-friends-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333; /* Changed text color */
+}
+
+.search-bar {
+    margin-bottom: 25px;
+}
+
+.search-bar input {
+    width: calc(100% - 40px);
+    padding: 12px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Adjusted for white background */
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    color: #333; /* Changed text color */
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjusted for white background */
+}
+
+.search-bar input:focus {
+    border-color: #555; /* Adjusted for white background */
+}
+
+.friends-list-container {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Custom Scrollbar for friends-list-container */
+.friends-list-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.friends-list-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    border-radius: 10px;
+}
+
+.friends-list-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Adjusted for white background */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.friends-list-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Adjusted for white background */
+}
+
+.friend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.03); /* Adjusted for white background */
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Adjusted shadow */
+    transition: transform 0.2s ease;
+}
+
+.friend-item:hover {
+    transform: translateY(-3px);
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+}
+
+.friend-info > div { /* Container for username and userId */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid #555; /* Adjusted border color */
+}
+
+.friend-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333; /* Changed text color */
+}
+
+.friend-id { /* NEW STYLE */
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.6); /* Changed text color */
+    margin-top: 2px;
+}
+
+.add-friend-button {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
+}
+
+.add-friend-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.6);
+}
+
+/* Chat Bot Styles - VIOLET THEME */
+.chat-bot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background: rgba(138, 43, 226, 0.15); /* Violet transparent background */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(138, 43, 226, 0.37); /* Violet shadow */
+    border: 1px solid rgba(138, 43, 226, 0.18); /* Violet border */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.chat-header {
+    background: rgba(138, 43, 226, 0.1); /* Violet transparent background */
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.1); /* Violet border */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff; /* Keep header text white for contrast */
+}
+
+.close-chat-btn {
+    background: none;
+    border: none;
+    color: #fff; /* Keep close button white for contrast */
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.close-chat-btn:hover {
+    color: #ff6b6b; /* Keep red for close action */
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(138, 43, 226, 0.05); /* Violet scrollbar track */
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(138, 43, 226, 0.2); /* Violet scrollbar thumb */
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(138, 43, 226, 0.4); /* Violet scrollbar thumb hover */
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+
+.user-message {
+    background: linear-gradient(45deg, #8A2BE2, #9932CC); /* Violet gradient for user messages */
+    align-self: flex-end;
+    color: #fff;
+}
+
+.bot-message {
+    background: rgba(138, 43, 226, 0.2); /* Transparent violet for bot messages */
+    align-self: flex-start;
+    color: #fff;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid rgba(138, 43, 226, 0.1); /* Violet border */
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(138, 43, 226, 0.3); /* Violet border */
+    border-radius: 20px;
+    background: rgba(138, 43, 226, 0.1); /* Violet transparent background */
+    color: #fff; /* Keep input text white for contrast */
+    font-size: 1em;
+    outline: none;
+}
+
+.chat-input-area input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Keep placeholder white for contrast */
+}
+
+.chat-input-area button {
+    background: linear-gradient(45deg, #9932CC, #8A2BE2); /* Violet gradient for send button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.6); /* Violet shadow */
+}
+
+.chat-input-area button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.8); /* Violet shadow hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-box {
+        padding: 30px;
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .nav-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .app-content {
+        padding: 15px;
+    }
+
+    .post {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .trending-videos-section,
+    .user-profile-section,
+    .add-friends-section {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .video-list-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-info p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info p strong {
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    .profile-info input {
+        width: calc(100% - 20px);
+        margin-left: 0;
+    }
+
+    .chat-bot-container {
+        width: calc(100% - 40px);
+        height: 70vh;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 2em;
+    }
+
+    .auth-box {
+        padding: 20px;
+    }
+
+    .auth-form input {
+        font-size: 0.9em;
+    }
+
+    .auth-button {
+        font-size: 1.1em;
+    }
+
+    .nav-button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .logout-button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .post-action-button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .chat-bot-container {
+        width: calc(100% - 20px);
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* Post Comments Section */
+.post-comments {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Adjusted border */
+    padding-top: 15px;
+}
+
+.comments-list {
+    max-height: 200px; /* Limit height for scrollable comments */
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.comments-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.comments-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    border-radius: 10px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Adjusted for white background */
+    border-radius: 10px;
+}
+
+.comments-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Adjusted for white background */
+}
+
+/* Wrapper for comment item and its reply input */
+.comment-wrapper {
+    margin-bottom: 10px; /* Space between comment blocks */
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.03); /* Adjusted for white background */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.comment-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Adjusted border */
+}
+
+.comment-content-wrapper {
+    flex-grow: 1;
+}
+
+.comment-username {
+    font-weight: bold;
+    font-size: 0.95em;
+    color: #333; /* Changed text color */
+    margin-bottom: 3px;
+    display: block;
+}
+
+.comment-text {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.8); /* Changed text color */
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.comment-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Adjusted for white background */
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05); /* Adjusted for white background */
+    color: #333; /* Changed text color */
+    font-size: 0.9em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.comment-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjusted for white background */
+}
+
+.comment-input:focus {
+    border-color: #555; /* Adjusted for white background */
+}
+
+.send-comment-button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 114, 255, 0.4);
+}
+
+.send-comment-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.6);
+}
+
+/* Specific styling for like button if needed (e.g., when active) */
+.like-button .fas.fa-heart {
+    color: #555; /* Default color for light background */
+    transition: color 0.2s ease;
+}
+
+/* Example of a 'liked' state (would be toggled by JS) */
+.like-button.liked .fas.fa-heart {
+    color: #ff6b6b; /* Red heart when liked */
+}
+
+/* NEW: Verified Icon Style */
+.verified-icon {
+    color: #007bff; /* A standard blue for verification */
+    font-size: 0.9em; /* Slightly smaller than text */
+    margin-left: 5px; /* Space from the text */
+    vertical-align: middle; /* Align with text */
+}
+
+/* NEW: Styles for comment actions (like/reply) */
+.comment-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: rgba(0, 0, 0, 0.7); /* Adjusted for white background */
+}
+
+.comment-action-button {
+    background: transparent;
+    border: none;
+    color: inherit; /* Inherit color from parent .comment-actions */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.comment-action-button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Adjusted for white background */
+    color: #333; /* Adjusted for white background */
+}
+
+.comment-action-button .fas {
+    font-size: 0.9em;
+}
+
+/* Specific styling for comment like button when active */
+.comment-like-button.liked .fas.fa-heart {
+    color: #ff6b6b; /* Red heart when liked */
+}
+
+/* Reply input area within comments */
+.reply-input-area {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-left: 40px; /* Indent to align with comment text */
+}
+
+.reply-input-area .reply-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Adjusted for white background */
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.08); /* Adjusted for white background */
+    color: #333; /* Changed text color */
+    font-size: 0.85em;
+    outline: none;
+}
+
+.reply-input-area .reply-input::placeholder {
+    color: rgba(0, 0, 0, 0.6); /* Adjusted for white background */
+}
+
+.reply-input-area .reply-input:focus {
+    border-color: rgba(0, 0, 0, 0.5); /* Adjusted for white background */
+}
+
+.reply-input-area .send-reply-button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 114, 255, 0.3);
+}
+
+.reply-input-area .send-reply-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 114, 255, 0.5);
+}
